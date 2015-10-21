@@ -9,7 +9,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
-  # config.vm.provision "shell", path: "provisioner.sh"
+  config.vm.provision "shell", path: "provisioner.sh"
   # config.vm.provision :shell, :path => "install-rvm.sh",  :args => "stable", :privileged => false
   # config.vm.provision :shell, :path => "install-ruby.sh", :args => "2.1.2", :privileged => false
   # config.vm.provision :shell, :path => "install-gems.sh", :privileged => false

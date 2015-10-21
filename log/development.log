@@ -1012,3 +1012,594 @@ Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.99.1 at 2015-10-20 15:05:18 +0000
 Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 192.168.99.1 at 2015-10-21 07:42:55 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (7.6ms)
+Completed 200 OK in 42ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/events" for 192.168.99.1 at 2015-10-21 07:43:04 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (2.2ms)[0m  SELECT "events".* FROM "events"
+  Rendered events/index.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 595ms (Views: 578.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 192.168.99.1 at 2015-10-21 07:43:05 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/events" for 192.168.99.1 at 2015-10-21 07:43:05 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 276ms (Views: 274.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.99.1 at 2015-10-21 07:43:05 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.99.1 at 2015-10-21 07:43:05 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 192.168.99.1 at 2015-10-21 07:43:05 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 192.168.99.1 at 2015-10-21 07:43:05 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:45:59 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (2.8ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:45:59.969776"], ["updated_at", "2015-10-21 07:45:59.969776"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 5.2ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/application_controller.rb:16:in `[]'
+  app/controllers/application_controller.rb:16:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:31:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.7ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:47:26 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:47:26.821553"], ["updated_at", "2015-10-21 07:47:26.821553"]]
+  [1m[36m (1.6ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.6ms)
+
+NoMethodError (undefined method `delete' for :show:Symbol):
+  app/controllers/application_controller.rb:20:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:31:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.8ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:51:51 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/vagrant/app/controllers/application_controller.rb:20: syntax error, unexpected ':', expecting keyword_end
+          args.first[@resource] = args.first["delete"] :json
+                                                        ^):
+  app/controllers/application_controller.rb:20: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/events_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (27.7ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:52:09 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:52:09.987128"], ["updated_at", "2015-10-21 07:52:09.987128"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 13.4ms)
+
+NoMethodError (undefined method `[]=' for :show:Symbol):
+  app/controllers/application_controller.rb:20:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:31:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.0ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:52:57 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:52:57.911292"], ["updated_at", "2015-10-21 07:52:57.911292"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 6.2ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/application_controller.rb:32:in `[]'
+  app/controllers/application_controller.rb:32:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.0ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.5ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:53:27 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:53:27.699850"], ["updated_at", "2015-10-21 07:53:27.699850"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 6.2ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/application_controller.rb:35:in `[]'
+  app/controllers/application_controller.rb:35:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.4ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:53:46 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:53:46.361833"], ["updated_at", "2015-10-21 07:53:46.361833"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Unpermitted parameter: payload
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.8ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:53:46.370319"], ["updated_at", "2015-10-21 07:53:46.370319"]]
+  [1m[35m (1.7ms)[0m  commit transaction
+Completed 200 OK in 22ms (ActiveRecord: 9.7ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:54:38 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:54:38.895671"], ["updated_at", "2015-10-21 07:54:38.895671"]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 8.7ms)
+
+NoMethodError (undefined method `delete' for :show:Symbol):
+  app/controllers/application_controller.rb:20:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:31:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.3ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.1ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:58:33 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.1ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:58:33.776276"], ["updated_at", "2015-10-21 07:58:33.776276"]]
+  [1m[35m (2.6ms)[0m  commit transaction
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 10.9ms)
+
+NoMethodError (undefined method `[]=' for :show:Symbol):
+  app/controllers/application_controller.rb:20:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:31:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.2ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.4ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.4ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 07:58:55 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 07:58:55.125057"], ["updated_at", "2015-10-21 07:58:55.125057"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 7.0ms)
+
+NoMethodError (undefined method `delete' for :show:Symbol):
+  app/controllers/application_controller.rb:20:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:31:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.3ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.2ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:00:19 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:00:19.471155"], ["updated_at", "2015-10-21 09:00:19.471155"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.1ms)
+
+NoMethodError (undefined method `[]=' for :show:Symbol):
+  app/controllers/application_controller.rb:21:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:32:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:28:in `each'
+  app/controllers/application_controller.rb:28:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.5ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:00:46 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:00:46.866969"], ["updated_at", "2015-10-21 09:00:46.866969"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Unpermitted parameter: payload
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:00:46.875764"], ["updated_at", "2015-10-21 09:00:46.875764"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 200 OK in 23ms (ActiveRecord: 9.4ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:02:22 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.3ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:02:22.609829"], ["updated_at", "2015-10-21 09:02:22.609829"]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.2ms)
+
+TypeError (no implicit conversion of Array into String):
+  app/controllers/application_controller.rb:20:in `+'
+  app/controllers/application_controller.rb:20:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:33:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:29:in `each'
+  app/controllers/application_controller.rb:29:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:02:41 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:02:41.117854"], ["updated_at", "2015-10-21 09:02:41.117854"]]
+  [1m[35m (1.8ms)[0m  commit transaction
+ARGS: [:show, {:status=>:created, :location=>#<Event id: 54, type: "testType", payload: "{\"key\":\"value\"}", timestamp: "2015-10-20 08:37:36", uuid: "D0FA0E1A-C419-491C-8D82-673ADF222F21", user: "C0FA0E1A-C419-491C-8D82-673ADF222F21", app: "desman-sample.dimension.it", created_at: "2015-10-21 09:02:41", updated_at: "2015-10-21 09:02:41">}]
+ARGS: [{:json=>[:show], :status=>nil, :force=>true}]
+Unpermitted parameter: payload
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:02:41.131088"], ["updated_at", "2015-10-21 09:02:41.131088"]]
+  [1m[36m (1.7ms)[0m  [1mcommit transaction[0m
+ARGS: [:show, {:status=>:created, :location=>#<Event id: 55, type: "testType", payload: "{\"key\":\"value\"}", timestamp: "2015-10-20 08:37:36", uuid: "D0FA0E1A-C419-491C-8D82-673ADF222F21", user: "C0FA0E1A-C419-491C-8D82-673ADF222F21", app: "desman-sample.dimension.it", created_at: "2015-10-21 09:02:41", updated_at: "2015-10-21 09:02:41">}]
+ARGS: []
+Completed 200 OK in 37ms (ActiveRecord: 12.2ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:05:17 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:05:17.660805"], ["updated_at", "2015-10-21 09:05:17.660805"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 5.9ms)
+
+NoMethodError (undefined method `except' for :show:Symbol):
+  app/controllers/application_controller.rb:20:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:31:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.7ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:06:26 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:06:26.385655"], ["updated_at", "2015-10-21 09:06:26.385655"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 8.1ms)
+
+NoMethodError (undefined method `[]=' for :show:Symbol):
+  app/controllers/application_controller.rb:20:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:31:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:27:in `each'
+  app/controllers/application_controller.rb:27:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.3ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:19:59 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:19:59.426899"], ["updated_at", "2015-10-21 09:19:59.426899"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Unpermitted parameter: payload
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:19:59.434795"], ["updated_at", "2015-10-21 09:19:59.434795"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Completed 200 OK in 21ms (ActiveRecord: 9.6ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:22:42 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/vagrant/app/controllers/application_controller.rb:25: syntax error, unexpected keyword_end
+/vagrant/app/controllers/application_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/application_controller.rb:25: syntax error, unexpected keyword_end
+  app/controllers/application_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/events_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (26.1ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:23:39 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/vagrant/app/controllers/application_controller.rb:24: syntax error, unexpected keyword_end
+/vagrant/app/controllers/application_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/controllers/application_controller.rb:24: syntax error, unexpected keyword_end
+  app/controllers/application_controller.rb:40: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/events_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.6ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:24:00 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:24:00.382578"], ["updated_at", "2015-10-21 09:24:00.382578"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 6.4ms)
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+  app/controllers/application_controller.rb:17:in `render'
+  app/controllers/application_controller.rb:37:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.2ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:24:26 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:24:26.891576"], ["updated_at", "2015-10-21 09:24:26.891576"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+Unpermitted parameter: payload
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:24:26.899263"], ["updated_at", "2015-10-21 09:24:26.899263"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 200 OK in 21ms (ActiveRecord: 9.0ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:25:58 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"_json"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 1.9ms)
+
+TypeError (no implicit conversion of String into Integer):
+  app/controllers/application_controller.rb:25:in `[]'
+  app/controllers/application_controller.rb:25:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.2ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.6ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:27:43 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[36m (0.9ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:27:43.921190"], ["updated_at", "2015-10-21 09:27:43.921190"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 9.5ms)
+
+TypeError (no implicit conversion of Symbol into Integer):
+  app/controllers/application_controller.rb:15:in `[]'
+  app/controllers/application_controller.rb:15:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:30:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:26:in `each'
+  app/controllers/application_controller.rb:26:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.1ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.9ms)
+
+
+Started POST "/events" for 192.168.99.1 at 2015-10-21 09:28:48 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"events"=>[{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}, {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}}], "event"=>{}}
+Unpermitted parameter: payload
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:28:48.830461"], ["updated_at", "2015-10-21 09:28:48.830461"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 5.7ms)
+
+NoMethodError (undefined method `delete' for :show:Symbol):
+  app/controllers/application_controller.rb:19:in `render'
+  app/controllers/events_controller.rb:43:in `block (2 levels) in create'
+  app/controllers/events_controller.rb:40:in `create'
+  app/controllers/application_controller.rb:30:in `block in handle_in_bulk'
+  app/controllers/application_controller.rb:26:in `each'
+  app/controllers/application_controller.rb:26:in `handle_in_bulk'
+
+
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.9ms)
+
+
+Started POST "/batch" for 192.168.99.1 at 2015-10-21 09:43:19 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#create as JSON
+  Parameters: {"event"=>{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}}
+Unpermitted parameter: payload
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.9ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:43:20.141703"], ["updated_at", "2015-10-21 09:43:20.141703"]]
+  [1m[35m (1.4ms)[0m  commit transaction
+  Rendered events/show.json.jbuilder (7.2ms)
+Completed 201 Created in 96ms (Views: 53.5ms | ActiveRecord: 10.4ms)
+
+
+Started POST "/batch" for 192.168.99.1 at 2015-10-21 09:44:25 +0000
+Cannot render console from 192.168.99.1! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EventsController#create as JSON
+  Parameters: {"event"=>{"uuid"=>"D0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType", "user"=>"C0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445330256, "payload"=>{"key"=>"value"}}}
+Unpermitted parameter: payload
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["type", "testType"], ["uuid", "D0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "C0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key\":\"value\"}"], ["timestamp", "2015-10-20 08:37:36.000000"], ["created_at", "2015-10-21 09:44:25.631474"], ["updated_at", "2015-10-21 09:44:25.631474"]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+  Rendered events/show.json.jbuilder (0.3ms)
+Completed 201 Created in 43ms (Views: 34.1ms | ActiveRecord: 3.9ms)
+Processing by EventsController#create as JSON
+  Parameters: {"uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "type"=>"testType2", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it", "timestamp"=>1445338256, "payload"=>{"key2"=>"value2"}, "event"=>{"type"=>"testType2", "payload"=>{"key2"=>"value2"}, "timestamp"=>1445338256, "uuid"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "user"=>"E0FA0E1A-C419-491C-8D82-673ADF222F21", "app"=>"desman-sample.dimension.it"}}
+Unpermitted parameter: payload
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "events" ("type", "uuid", "user", "app", "payload", "timestamp", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["type", "testType2"], ["uuid", "E0FA0E1A-C419-491C-8D82-673ADF222F21"], ["user", "E0FA0E1A-C419-491C-8D82-673ADF222F21"], ["app", "desman-sample.dimension.it"], ["payload", "{\"key2\":\"value2\"}"], ["timestamp", "2015-10-20 10:50:56.000000"], ["created_at", "2015-10-21 09:44:25.675773"], ["updated_at", "2015-10-21 09:44:25.675773"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  Rendered events/show.json.jbuilder (0.3ms)
+Completed 201 Created in 40ms (Views: 32.1ms | ActiveRecord: 3.3ms)

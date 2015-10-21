@@ -31,6 +31,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'puma'
 
+gem 'batch_api'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
