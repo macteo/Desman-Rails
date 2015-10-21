@@ -49,12 +49,12 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    if event_params["payload"]
-      @event.payload = event_params["payload"].to_json
+    if params["event"]["payload"]
+      @event.payload = params["event"]["payload"].to_json
     end
 
-    if event_params["timestamp"]
-      @event.timestamp = Time.at(event_params["timestamp"])
+    if params["event"]["timestamp"]
+      @event.timestamp = Time.at(params["event"]["timestamp"])
     end
 
     respond_to do |format|
