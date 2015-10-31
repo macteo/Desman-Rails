@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Apps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bundle-Id</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apps.each do |bundle| %>
+      <tr>
+        <td><%= bundle %></td>
+        <td><%= link_to 'Users', "/apps/#{bundle}/users" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

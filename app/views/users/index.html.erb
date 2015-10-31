@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user %></td>
+        <td><%= link_to 'Events', "/apps/#{params[:bundle]}/users/#{user}/events" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

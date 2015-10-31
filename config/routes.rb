@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   resources :events
+  get 'apps' => 'apps#index'
+  get 'apps/:bundle/users' => 'users#index', :constraints => { :bundle => /[^\/]+/ }
+  get 'apps/:bundle/users/:user/events' => 'users#show', :constraints => { :bundle => /[^\/]+/, :user => /[^\/]+/ }
+
+  root 'apps#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
