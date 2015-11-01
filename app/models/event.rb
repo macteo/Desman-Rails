@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
   include Rails.application.routes.url_helpers
 
   after_create :write_to_file
+  after_create :broadcast_event
 
   # To be able to use type as parameter
   self.inheritance_column = :_type_disabled
@@ -17,6 +18,14 @@ class Event < ActiveRecord::Base
     File.open("#{dirPath}/#{filePath}", 'a+') { |file|
       file.write("#{self.timestamp} - #{self.type}.#{self.subtype} - #{EVENTS_BASE_URL}#{event_path(self)}\n")
     }
+  end
+
+  def channel_name
+    return CGI.escape("#{self.app}-#{self.user}")
+  end
+
+  def broadcast_event
+    WebsocketRails[channel_name].trigger("new_event", self)
   end
 
   def prettyPayload
