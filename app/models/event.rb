@@ -25,6 +25,7 @@ class Event < ActiveRecord::Base
   end
 
   def broadcast_event
+    # Fiber.new{  }.resume
     WebsocketRails[channel_name].trigger("new_event", self)
   end
 

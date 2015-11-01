@@ -174,10 +174,13 @@ DEPENDENCIES
   batch_api
   byebug
   coffee-rails (~> 4.1.0)
+  em-synchrony
+  hiredis
   jbuilder (~> 2.0)
   jquery-rails
   puma
   rails (= 4.2.4)
+  redis
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

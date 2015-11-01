@@ -42,4 +42,8 @@ Rails.application.configure do
   config.middleware.delete Rack::Lock
 end
 
-EVENTS_BASE_URL = 'http://desman.local:3000'
+EVENTS_DOMAIN = 'desman.local'
+WEB_PORT = '3000'
+WEBSOCKET_PORT = '3001'
+WEBSOCKET_URL = "#{EVENTS_DOMAIN}:#{WEBSOCKET_PORT}/websocket"
+EVENTS_BASE_URL = "http://#{EVENTS_DOMAIN}:#{WEB_PORT}"

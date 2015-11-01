@@ -27,7 +27,7 @@
 </table>
 
 <script>
-  var dispatcher = new WebSocketRails('desman.local:3000/websocket');
+  var dispatcher = new WebSocketRails('<%= WEBSOCKET_URL %>');
   var channel = dispatcher.subscribe('<%= @channel %>');
   channel.bind('new_event', function(data) {
     console.log('channel event received: ' + data["type"]);
