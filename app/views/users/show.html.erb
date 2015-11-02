@@ -39,7 +39,7 @@
     var tdUuid = row.insertCell(3);
     var tdShow = row.insertCell(4);
     tdType.innerHTML = data["type"] + '.' + data["subtype"];
-    tdPayload.innerHTML = data["payload"];
+    tdPayload.innerHTML = JSON.stringify(data["payload"]);
     tdTimestamp.innerHTML = data["timestamp"];
     tdUuid.innerHTML = data["uuid"];
     tdShow.innerHTML = '<a href="/events/' + data["id"] + '">Show</a>';

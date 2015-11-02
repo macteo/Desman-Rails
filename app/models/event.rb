@@ -26,7 +26,8 @@ class Event < ActiveRecord::Base
 
   def broadcast_event
     # Fiber.new{  }.resume
-    WebsocketRails[channel_name].trigger("new_event", self)
+
+    WebsocketRails[channel_name].trigger("new_event", socket_object)
   end
 
   def prettyPayload
@@ -35,5 +36,14 @@ class Event < ActiveRecord::Base
     else
       return ""
     end
+  end
+
+  def socket_object
+    hash = self.attributes
+    if payload
+      hash["payload"] = JSON.parse(payload)
+    end
+    logger.info "hash " + hash.to_json
+    return hash
   end
 end
