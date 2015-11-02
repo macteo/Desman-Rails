@@ -40,6 +40,7 @@ class Event < ActiveRecord::Base
 
   def socket_object
     hash = self.attributes
+    hash["timestamp"] = self.timestamp.to_i
     if payload
       hash["payload"] = JSON.parse(payload)
     end
