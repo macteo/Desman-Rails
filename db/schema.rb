@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20151020130634) do
 
   create_table "events", force: :cascade do |t|
     t.string   "type"
-    t.string   "subtype"
     t.string   "payload"
     t.datetime "timestamp"
     t.string   "uuid"

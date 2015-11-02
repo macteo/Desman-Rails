@@ -2,7 +2,7 @@
 capybara-*.html
 .rspec
 /log
-/tmp
+tmp/*
 /tmp/cache/*
 /db/*.sqlite3
 /db/*.sqlite3-journal
