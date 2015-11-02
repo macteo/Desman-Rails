@@ -43,7 +43,6 @@ class Event < ActiveRecord::Base
     if payload
       hash["payload"] = JSON.parse(payload)
     end
-    logger.info "hash " + hash.to_json
     return hash
   end
 end
