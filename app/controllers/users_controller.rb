@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @events = Event.where(:app => params[:bundle], :user => params[:user]).order('id DESC').limit(100)
+    @events = Event.where(:app => params[:bundle], :user => params[:user]).order('timestamp DESC').limit(100)
   end
 
   private

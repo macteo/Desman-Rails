@@ -27,6 +27,7 @@
 </table>
 
 <script>
+
   var dispatcher = new WebSocketRails('<%= WEBSOCKET_URL %>');
   var channel = dispatcher.subscribe('<%= @channel %>');
   channel.bind('new_event', function(data) {
@@ -39,9 +40,24 @@
     var tdUuid = row.insertCell(3);
     var tdShow = row.insertCell(4);
     tdType.innerHTML = data["type"] + '.' + data["subtype"];
-    tdPayload.innerHTML = JSON.stringify(data["payload"]);
-    tdTimestamp.innerHTML = data["timestamp"];
+    var payload = JSON.stringify(data["payload"]);
+    if (payload)  {
+      tdPayload.innerHTML = payload;
+    }
+    tdTimestamp.innerHTML = timeConverter(data["timestamp"]);
     tdUuid.innerHTML = data["uuid"];
     tdShow.innerHTML = '<a href="/events/' + data["id"] + '">Show</a>';
   });
+
+  function timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var year = a.getFullYear();
+    var month = a.getMonth() + 1;
+    var day = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+  }
 </script>
