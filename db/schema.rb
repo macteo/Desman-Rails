@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20151020130634) do
   create_table "events", force: :cascade do |t|
     t.string   "type"
     t.string   "subtype"
-    t.string   "payload"
+    t.string   "device"
+    t.text     "payload"
     t.datetime "timestamp"
     t.string   "uuid"
     t.string   "user"

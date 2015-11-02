@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /apps/:bundle/users
   # GET /apps/:bundle/users.json
   def index
-    @users = Event.where(:app => params[:bundle]).uniq.pluck(:user)
+    @users = Event.where(:app => params[:bundle]).uniq.pluck(:user, :device)
   end
 
   def show

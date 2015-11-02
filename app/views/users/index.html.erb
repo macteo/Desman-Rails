@@ -13,8 +13,8 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user %></td>
-        <td><%= link_to 'Events', "/apps/#{params[:bundle]}/users/#{user}/events" %></td>
+        <td><%= user[1] %> - <%= user[0] %></td>
+        <td><%= link_to 'Events', "/apps/#{params[:bundle]}/users/#{user[0]}/events" %></td>
       </tr>
     <% end %>
   </tbody>

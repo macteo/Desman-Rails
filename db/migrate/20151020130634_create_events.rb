@@ -3,6 +3,7 @@ class CreateEvents < ActiveRecord::Migration
     create_table :events do |t|
       t.string :type
       t.string :subtype
+      t.string :device
       t.text :payload
       t.datetime :timestamp
       t.string :uuid

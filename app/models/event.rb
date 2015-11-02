@@ -14,6 +14,9 @@ class Event < ActiveRecord::Base
     end
 
     filePath = "#{self.user}.log"
+    if !self.device.blank?
+      filePath = "#{self.user}#{self.device}.log"
+    end
 
     File.open("#{dirPath}/#{filePath}", 'a+') { |file|
       file.write("#{self.timestamp} - #{self.type}.#{self.subtype} - #{EVENTS_BASE_URL}#{event_path(self)}\n")
@@ -26,7 +29,6 @@ class Event < ActiveRecord::Base
 
   def broadcast_event
     # Fiber.new{  }.resume
-
     WebsocketRails[channel_name].trigger("new_event", socket_object)
   end
 
