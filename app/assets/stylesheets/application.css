@@ -26,3 +26,15 @@
   background-image: url("icon.svg");
   background-size: cover;
  }
+
+ul.nostyle {
+  list-style-type: none;
+}
+
+li.grid {
+  display: block;
+  width: 160px;
+  float: left;
+  margin: 10px;
+  text-align: center;
+}

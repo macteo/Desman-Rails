@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def index
     @users = Event.where(:app => params[:bundle]).uniq.pluck(:user)
 
-    attachments = Event.where(:user => @users, :type => "User", :subtype => "Info").group(:user).having('timestamp = MAX(timestamp)').pluck(:user, :id, :attachment, :payload)
+    attachments = Event.where(:user => @users, :type => "User", :subtype => "Info").group(:user, :timestamp).having('timestamp = MAX(timestamp)').pluck(:user, :id, :attachment, :payload)
     @icons = Hash[attachments.map{|att| [att[0], "#{att[1]}/#{att[2]}"]}]
     @names = Hash[attachments.map{|att|
       if jsonPayload = JSON.parse(att[3], :quirks_mode => true)

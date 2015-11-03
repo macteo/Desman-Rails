@@ -4,8 +4,8 @@
 
 <% @users.each do |user| %>
   <a href="<%= "/apps/#{params[:bundle]}/users/#{user}/events" %>">
-    <ul style="list-style-type: none;">
-      <li style="display: block;width: 100px;float: left;margin: 10px;width: 100px;text-align: center;">
+    <ul class="nostyle">
+      <li class="grid">
         <span>
           <% src = asset_path "empty.png" %>
           <% if !@icons[user].blank?
@@ -13,6 +13,7 @@
            end %>
           <img class="icon" src="<%= src %>" />
         </span>
+        <br />
         <span>
           <% if !@names[user].blank? %>
             <%= @names[user] %>
