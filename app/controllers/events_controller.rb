@@ -27,7 +27,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
-    if params["event"]["payload"]
+    if !params["event"]["payload"].is_a?(String)
       @event.payload = params["event"]["payload"].to_json
     end
 
@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    if params["event"]["payload"]
+    if !params["event"]["payload"].is_a?(String)
       @event.payload = params["event"]["payload"].to_json
     end
 

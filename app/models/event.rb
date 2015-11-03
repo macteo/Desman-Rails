@@ -36,9 +36,11 @@ class Event < ActiveRecord::Base
 
   def prettyPayload
     if !payload.blank?
-      jsonPayload = JSON.parse(payload, :quirks_mode => true)
-      if !jsonPayload.blank?
+      begin
+        jsonPayload = JSON.parse(payload, :quirks_mode => true)
         return JSON.pretty_generate(jsonPayload)
+      rescue Exception => e
+        return payload
       end
     end
     return ""
