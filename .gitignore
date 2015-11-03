@@ -36,3 +36,4 @@ bower.json
 .powenv
 
 .vagrant/
+public/uploads/*
