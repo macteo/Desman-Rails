@@ -27,12 +27,15 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
+    # logger.info "----------------\n" + request.body.read
+    # logger.info "----------------"
+
     if !params["event"]["payload"].is_a?(String)
       @event.payload = params["event"]["payload"].to_json
     end
 
     if params["event"]["timestamp"]
-      @event.timestamp = Time.at(params["event"]["timestamp"])
+      @event.timestamp = Time.at(params["event"]["timestamp"].to_f)
     end
 
     respond_to do |format|
@@ -54,7 +57,7 @@ class EventsController < ApplicationController
     end
 
     if params["event"]["timestamp"]
-      @event.timestamp = Time.at(params["event"]["timestamp"])
+      @event.timestamp = Time.at(params["event"]["timestamp"].to_f)
     end
 
     respond_to do |format|
@@ -86,7 +89,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:type, :subtype, :timestamp, :uuid, :user, :app, :device, :payload, :attachment, :attachment_cache).tap do |whitelisted|
+      params.require(:event).permit(:type, :subtype, :timestamp, :uuid, :user, :app, :payload, :attachment, :attachment_cache).tap do |whitelisted|
         whitelisted[:payload] = params[:event][:payload]
       end
     end

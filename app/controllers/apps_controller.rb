@@ -8,13 +8,17 @@ class AppsController < ApplicationController
     attachments = Event.where(:app => @apps, :type => "Application", :subtype => "Info").where("attachment IS NOT NULL").group(:app, :timestamp).having('timestamp = MAX(timestamp)').pluck(:app, :id, :attachment, :payload)
     @icons = Hash[attachments.map{|att| [att[0], "#{att[1]}/#{att[2]}"]}]
     @names = Hash[attachments.map{|att|
-      if jsonPayload = JSON.parse(att[3], :quirks_mode => true)
-        if !jsonPayload["name"].blank?
-          [att[0], jsonPayload["name"]]
+      begin
+        if jsonPayload = JSON.parse(att[3], :quirks_mode => true)
+          if !jsonPayload["name"].blank?
+            [att[0], jsonPayload["name"]]
+          else
+            nil
+          end
         else
           nil
         end
-      else
+      rescue Exception => e
         nil
       end
       }]
