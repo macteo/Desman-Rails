@@ -1,21 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Users</h1>
+<h1>Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user[1] %> - <%= user[0] %></td>
-        <td><%= link_to 'Events', "/apps/#{params[:bundle]}/users/#{user[0]}/events" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @users.each do |user| %>
+  <a href="<%= "/apps/#{params[:bundle]}/users/#{user}/events" %>">
+    <ul style="list-style-type: none;">
+      <li style="display: block;width: 100px;float: left;margin: 10px;width: 100px;text-align: center;">
+        <span>
+          <% src = asset_path "empty.png" %>
+          <% if !@icons[user].blank?
+            src = EVENTS_BASE_URL + "/uploads/event/attachment/" + @icons[user]
+           end %>
+          <img class="icon" src="<%= src %>" />
+        </span>
+        <span>
+          <% if !@names[user].blank? %>
+            <%= @names[user] %>
+          <% else %>
+            <%= user %>
+          <% end %>
+        </span>
+      </li>
+    </ul>
+  </a>
+<% end %>

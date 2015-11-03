@@ -6,3 +6,6 @@ json.array!(@events) do |event|
   end
   json.timestamp event.timestamp.to_i
 end
+if event.attachment
+  json.attachment "#{EVENTS_BASE_URL}#{event.attachment.url}"
+end

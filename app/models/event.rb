@@ -1,5 +1,7 @@
 class Event < ActiveRecord::Base
   include Rails.application.routes.url_helpers
+  mount_uploader :attachment, AttachmentUploader
+
 
   after_create :write_to_file
   after_create :broadcast_event
@@ -34,17 +36,19 @@ class Event < ActiveRecord::Base
 
   def prettyPayload
     if !payload.blank?
-      return JSON.pretty_generate(JSON.parse(payload))
-    else
-      return ""
+      jsonPayload = JSON.parse(payload, :quirks_mode => true)
+      if !jsonPayload.blank?
+        return JSON.pretty_generate(jsonPayload)
+      end
     end
+    return ""
   end
 
   def socket_object
     hash = self.attributes
     hash["timestamp"] = self.timestamp.to_i
-    if payload
-      hash["payload"] = JSON.parse(payload)
+    if !payload.blank?
+      hash["payload"] = JSON.parse(payload, :quirks_mode => true)
     end
     return hash
   end

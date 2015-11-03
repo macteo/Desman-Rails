@@ -1,4 +1,4 @@
-<%= form_for(@event) do |f| %>
+<%= form_for @event, html: { multipart: true } do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -43,6 +43,11 @@
     <%= f.label :app %><br>
     <%= f.text_field :app %>
   </div>
+  <p>
+    <label>Attachment</label>
+    <%= f.file_field :attachment %>
+    <%= f.hidden_field :attachment_cache %>
+  </p>
   <div class="actions">
     <%= f.submit %>
   </div>
