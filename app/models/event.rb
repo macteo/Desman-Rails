@@ -16,7 +16,7 @@ class Event < ActiveRecord::Base
     end
 
     filePath = "#{self.user}.log"
-    
+
     File.open("#{dirPath}/#{filePath}", 'a+') { |file|
       file.write("#{self.timestamp} - #{self.type}.#{self.subtype} - #{EVENTS_BASE_URL}#{event_path(self)}\n")
     }
@@ -47,7 +47,10 @@ class Event < ActiveRecord::Base
     hash = self.attributes
     hash["timestamp"] = self.timestamp.to_i
     if !payload.blank?
-      hash["payload"] = JSON.parse(payload, :quirks_mode => true)
+      begin
+        hash["payload"] = JSON.parse(payload, :quirks_mode => true)
+      rescue Exception => e
+      end
     end
     return hash
   end
