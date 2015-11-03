@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ img.icon {
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #5BADF0;
+  border-radius: 23%;
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-image: url("icon.svg");
+  background-size: cover;
+ }
