@@ -5,7 +5,7 @@ class AppsController < ApplicationController
   # GET /apps/:bundle/users.json
   def index
     @apps = Event.uniq.pluck(:app)
-    attachments = Event.where(:app => @apps, :type => "Application", :subtype => "Info").where("attachment IS NOT NULL").group(:app, :timestamp).having('timestamp = MAX(timestamp)').pluck(:app, :id, :attachment, :payload)
+    attachments = Event.where(:type => "Desman.Application", :subtype => "Info").where("attachment IS NOT NULL").having('timestamp = MAX(timestamp)').group(:app, :timestamp).pluck(:app, :id, :attachment, :payload)
     @icons = Hash[attachments.map{|att| [att[0], "#{att[1]}/#{att[2]}"]}]
     @names = Hash[attachments.map{|att|
       begin

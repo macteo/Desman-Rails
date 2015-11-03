@@ -26,10 +26,6 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
-    # logger.info "----------------\n" + request.body.read
-    # logger.info "----------------"
-
     if !params["event"]["payload"].is_a?(String)
       @event.payload = params["event"]["payload"].to_json
     end
