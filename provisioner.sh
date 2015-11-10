@@ -31,5 +31,6 @@ gem install rails
 
 rbenv rehash
 
-cd /vagrant
-bundle
+# cd /vagrant
+# bundle
+# rake db:migrate
