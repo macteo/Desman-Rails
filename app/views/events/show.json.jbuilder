@@ -6,6 +6,6 @@ if @event.payload
   end
 end
 json.timestamp @event.timestamp.to_i
-if @event.attachment
+if !@event.attachment.blank?
   json.attachment "#{EVENTS_BASE_URL}#{@event.attachment.url}"
 end

@@ -8,7 +8,7 @@ json.array!(@events) do |event|
   end
   json.timestamp event.timestamp.to_i
   json.url event_url(event, format: :json)
-  if event.attachment
+  if !event.attachment.blank?
     json.attachment "#{EVENTS_BASE_URL}#{event.attachment.url}"
   end
 end
