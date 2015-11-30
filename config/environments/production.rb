@@ -82,6 +82,6 @@ end
 
 # app_name = ENV['URL'].split(".").first
 
-EVENTS_DOMAIN = ENV['URL']
+EVENTS_DOMAIN = ENV['APP_DOMAIN']
 WEBSOCKET_URL = "#{EVENTS_DOMAIN}/websocket"
 EVENTS_BASE_URL = "https://#{EVENTS_DOMAIN}"

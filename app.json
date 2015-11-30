@@ -14,5 +14,11 @@
     },{
       "url": "https://github.com/gunpowderlabs/buildpack-ruby-db-migrate.git"
     }
-  ]
+  ],
+  "env": {
+    "APP_DOMAIN": {
+      "description": "The domain of this application, usually something like 'heroku-app-name.herokuapp.com'",
+      "required": true
+    }
+  }
 }
