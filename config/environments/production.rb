@@ -80,6 +80,6 @@ Rails.application.configure do
   config.middleware.delete Rack::Lock
 end
 
-EVENTS_DOMAIN = 'desman.dimension.it'
+EVENTS_DOMAIN = 'shielded-badlands-9757.herokuapp.com'
 WEBSOCKET_URL = "#{EVENTS_DOMAIN}/websocket"
-EVENTS_BASE_URL = "http://#{EVENTS_DOMAIN}"
+EVENTS_BASE_URL = "https://#{EVENTS_DOMAIN}"

@@ -15,7 +15,7 @@ WebsocketRails.setup do |config|
   # Change to true to enable standalone server mode
   # Start the standalone server with rake websocket_rails:start_server
   # * Requires Redis
-  config.standalone = true
+  config.standalone = false
   config.standalone_port = 3010
   # Change to true to enable channel synchronization between
   # multiple server instances.
@@ -28,7 +28,10 @@ WebsocketRails.setup do |config|
   # Uncomment and edit to point to a different redis instance.
   # Will not be used unless standalone or synchronization mode
   # is enabled.
-  config.redis_options = {:host => '0.0.0.0', :port => '6379'} #, :driver => :hiredis
+  config.redis_options = {:host => 'ec2-54-235-152-160.compute-1.amazonaws.com', :port => '21419', :user => 'h', :password => 'p6q61bt5ed9qte5a25a9t4ro3qh'} #, :driver => :hiredis
+
+
+  # redis://h:p6q61bt5ed9qte5a25a9t4ro3qh@ec2-54-235-152-160.compute-1.amazonaws.com:21419
 
   # By default, all subscribers in to a channel will be removed
   # when that channel is made private. If you don't wish active
