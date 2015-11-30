@@ -1,23 +1,15 @@
 default: &default
   adapter: postgresql
   encoding: utf8
-  username: root
-  password: root
-  host: 127.0.0.1
-  port: 3306
   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 16 %>
 
 development:
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
-  database: db/development.sqlite3
+  <<: *default
+  database: desman
 
 test:
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
-  database: db/test.sqlite3
+  <<: *default
+  database: desman
 
 production:
   <<: *default
