@@ -6,5 +6,12 @@
   "keywords": ["rails", "desman", "event", "log", "mobile"],
   "addons": [
     "heroku-redis"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-ruby.git"
+    },{
+      "url": "https://github.com/gunpowderlabs/buildpack-ruby-db-migrate.git"
+    }
   ]
 }
