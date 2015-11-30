@@ -5,6 +5,6 @@
   "logo": "https://raw.githubusercontent.com/macteo/Desman-Rails/feature/heroku/app/assets/images/UserPlaceholder%403x.png",
   "keywords": ["rails", "desman", "event", "log", "mobile"],
   "addons": [
-    "herokuredis"
+    "heroku-redis"
   ]
 }
