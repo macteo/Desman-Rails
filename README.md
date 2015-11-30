@@ -2,6 +2,11 @@
 
 In order to start the server you need to:
 
+Create user vagrant on postgresql
+```bash
+create role vagrant with createdb login password '';
+```
+
 Ensure redis-server is running
 
 ```bash
