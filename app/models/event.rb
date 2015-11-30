@@ -2,7 +2,7 @@ class Event < ActiveRecord::Base
   include Rails.application.routes.url_helpers
   mount_uploader :attachment, AttachmentUploader
 
-  after_create :write_to_file
+  # after_create :write_to_file
   after_create :broadcast_event
 
   # To be able to use type as parameter
