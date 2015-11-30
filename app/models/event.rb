@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   mount_uploader :attachment, AttachmentUploader
 
   # after_create :write_to_file
-  after_create :broadcast_event
+  # after_create :broadcast_event
 
   # To be able to use type as parameter
   self.inheritance_column = :_type_disabled
@@ -26,7 +26,7 @@ class Event < ActiveRecord::Base
   end
 
   def broadcast_event
-    Fiber.new{  }.resume
+    # Fiber.new{  }.resume
     WebsocketRails[channel_name].trigger("new_event", socket_object)
   end
 
