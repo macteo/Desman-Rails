@@ -20,7 +20,7 @@ WebsocketRails.setup do |config|
   # Change to true to enable channel synchronization between
   # multiple server instances.
   # * Requires Redis.
-  config.synchronize = true
+  config.synchronize = false
 
   # Prevent Thin from daemonizing (default is true)
   # config.daemonize = false
@@ -29,9 +29,6 @@ WebsocketRails.setup do |config|
   # Will not be used unless standalone or synchronization mode
   # is enabled.
   config.redis_options = {:host => 'ec2-54-235-152-160.compute-1.amazonaws.com', :port => '21419', :user => 'h', :password => 'p6q61bt5ed9qte5a25a9t4ro3qh'} #, :driver => :hiredis
-
-
-  # redis://h:p6q61bt5ed9qte5a25a9t4ro3qh@ec2-54-235-152-160.compute-1.amazonaws.com:21419
 
   # By default, all subscribers in to a channel will be removed
   # when that channel is made private. If you don't wish active
