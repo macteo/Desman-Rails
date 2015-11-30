@@ -80,7 +80,7 @@ Rails.application.configure do
   config.middleware.delete Rack::Lock
 end
 
-app_name = ENV['URL'].split(".").first
+# app_name = ENV['URL'].split(".").first
 
 EVENTS_DOMAIN = ENV['URL']
 WEBSOCKET_URL = "#{EVENTS_DOMAIN}/websocket"
