@@ -1,0 +1,10 @@
+{
+  "name": "Desman Rails",
+  "description": "Desman server written in Ruby on Rails",
+  "repository": "https://github.com/macteo/Desman-Rails.git",
+  "logo": "https://raw.githubusercontent.com/macteo/Desman-Rails/feature/heroku/app/assets/images/UserPlaceholder%403x.png",
+  "keywords": ["rails", "desman", "event", "log", "mobile"],
+  "addons": [
+    "herokuredis",
+  ]
+}

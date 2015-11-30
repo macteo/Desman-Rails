@@ -28,8 +28,7 @@ WebsocketRails.setup do |config|
   # Uncomment and edit to point to a different redis instance.
   # Will not be used unless standalone or synchronization mode
   # is enabled.
-  # config.redis_options = {:host => 'ec2-54-235-152-160.compute-1.amazonaws.com', :port => '21419', :user => 'h', :password => 'p6q61bt5ed9qte5a25a9t4ro3qh'} #, :driver => :hiredis
-
+  
   config.redis_options = {:url => ENV['REDIS_URL']}
 
   # By default, all subscribers in to a channel will be removed
