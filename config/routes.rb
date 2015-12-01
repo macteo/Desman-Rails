@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :events
   get 'apps' => 'apps#index'
   get 'apps/:bundle/users' => 'users#index', :constraints => { :bundle => /[^\/]+/ }

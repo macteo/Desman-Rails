@@ -78,6 +78,8 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.middleware.delete Rack::Lock
+
+  config.action_mailer.default_url_options = { host: 'desman.dimension.it' }
 end
 
 EVENTS_DOMAIN = 'desman.dimension.it'
