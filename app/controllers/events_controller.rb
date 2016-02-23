@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
+  before_action :authenticate, only: [:create]
 
   # GET /events
   # GET /events.json
@@ -89,4 +90,21 @@ class EventsController < ApplicationController
         whitelisted[:payload] = params[:event][:payload]
       end
     end
+
+    def authenticate
+    authenticate_or_request_with_http_token do  |token, options|
+      app = APPS_AUTH[params[:app]]
+      if app
+        if app["token"] && app["token"] == token
+          logger.info "Authenticated"
+        else
+          render :json => {:error => "Unauthorized"}.to_json, :status => 401
+          return
+        end
+      else
+        render :json => {:error => "app not found"}.to_json, :status => 404
+        return
+      end
+    end
+  end
 end

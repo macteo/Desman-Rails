@@ -68,7 +68,10 @@ class Event < ActiveRecord::Base
           hash["payload"] = JSON.parse(payload, :quirks_mode => true)
         else
           thePayload = JSON.parse(payload, :quirks_mode => true)
-          hash.merge!(Sparsify.sparse( thePayload, :separator => '-' ))
+          prefix = Hash.new()
+          prefixTitle = "#{self.subtype}".gsub(".", "-")
+          prefix[prefixTitle] = thePayload
+          hash.merge!(Sparsify.sparse(prefix, :separator => "-" ))
         end
       rescue Exception => e
       end
