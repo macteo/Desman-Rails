@@ -8,7 +8,6 @@ rm -rf desman/.vagrant
 rm -rf desman/public/assets
 mkdir desman/public/assets
 rm -rf desman/public/uploads
-rm -rf desman/public/builds
 rm -rf desman/tmp/pids
 mkdir desman/tmp/pids
 rm -rf desman/tmp/sessions

@@ -9,7 +9,7 @@ rm -rf desman-old
 mv desman desman-old
 unzip desman.zip
 
-cp -rf desman-old/public/uploads desman/public/
+cp -rf desman-old/public/uploads desman/public/uploads
 cp -rf desman-old/log desman/log
 cp -r desman-old/config/secrets.yml desman/config/secrets.yml
 cp -r desman-old/config/database.yml desman/config/database.yml
