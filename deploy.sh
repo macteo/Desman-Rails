@@ -14,6 +14,9 @@ mkdir desman/tmp/pids
 rm -rf desman/tmp/sessions
 mkdir desman/tmp/sessions
 rm -rf desman/tmp/sockets
+rm -r config/secrets.yml
+rm -r config/database.yml
+rm -r config/apps_auth.yml
 mkdir desman/tmp/sockets
 rm -rf desman/tmp/cache
 mkdir desman/tmp/cache
@@ -23,8 +26,8 @@ rm desman.zip
 
 zip -r desman.zip desman/*
 
-scp desman.zip ec2ireland.macteo.it:~/
+scp desman.zip bryan.dimension.it:~/web/
 
 rm desman.zip
 rm -rf desman
-ssh ec2ireland.macteo.it < Desman-Rails/replace.sh
+ssh bryan.dimension.it < Desman-Rails/replace.sh

@@ -95,6 +95,8 @@ class EventsController < ApplicationController
     authenticate_or_request_with_http_token do  |token, options|
       app = APPS_AUTH[params[:app]]
       if app
+        logger.info "------- Token " #{token}
+        # logger.info "------- App #{app}"
         if app["token"] && app["token"] == token
           logger.info "Authenticated"
         else
