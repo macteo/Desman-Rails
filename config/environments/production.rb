@@ -76,6 +76,12 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.middleware.delete Rack::Lock
+
+  config.action_mailer.default_url_options = { host: 'desman.dimension.it' }
 end
 
-EVENTS_BASE_URL = 'http://desman.dimension.it'
+EVENTS_DOMAIN = 'desman.dimension.it'
+WEBSOCKET_URL = "#{EVENTS_DOMAIN}/websocket"
+EVENTS_BASE_URL = "https://#{EVENTS_DOMAIN}"

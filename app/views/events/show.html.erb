@@ -2,7 +2,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @event.type %>
+  <%= @event.type %>.<%= @event.subtype %>
 </p>
 
 <p>
@@ -29,6 +29,13 @@
   <strong>App:</strong>
   <%= @event.app %>
 </p>
+
+<% if @event.attachment? %>
+  <p>
+    <strong>Attachment:</strong>
+    <%= link_to @event.attachment.file.filename, @event.attachment.url %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

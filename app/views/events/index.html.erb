@@ -18,7 +18,7 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.type %></td>
+        <td><%= event.type %>.<%= event.subtype %></td>
         <td><%= event.payload %></td>
         <td><%= event.timestamp %></td>
         <td><%= event.uuid %></td>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+  <a href="<%= "/apps/#{params[:bundle]}/users/#{user}/events" %>">
+    <ul class="nostyle">
+      <li class="grid">
+        <span>
+          <% src = asset_path "empty.png" %>
+          <% if !@icons[user].blank?
+            src = EVENTS_BASE_URL + "/uploads/event/attachment/" + @icons[user]
+           end %>
+          <img class="user" src="<%= src %>" />
+        </span>
+        <br />
+        <span>
+          <% if !@names[user].blank? %>
+            <%= @names[user] %>
+          <% else %>
+            <%= user %>
+          <% end %>
+        </span>
+      </li>
+    </ul>
+  </a>
+<% end %>

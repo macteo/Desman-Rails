@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Events</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Payload</th>
+      <th>Timestamp</th>
+      <th>Uuid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody id="events_table">
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.type %>.<%= event.subtype %></td>
+        <td><%= event.payload %></td>
+        <td><%= event.timestamp %></td>
+        <td><%= event.uuid %></td>
+        <td><%= link_to 'Show', event %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+
+  var dispatcher = new WebSocketRails('<%= WEBSOCKET_URL %>');
+  var channel = dispatcher.subscribe('<%= @channel %>');
+  channel.bind('new_event', function(data) {
+    console.log('channel event received: ' + data["type"]);
+    var table = document.getElementById("events_table");
+    var row = table.insertRow(0);
+    var tdType = row.insertCell(0);
+    var tdPayload = row.insertCell(1);
+    var tdTimestamp = row.insertCell(2);
+    var tdUuid = row.insertCell(3);
+    var tdShow = row.insertCell(4);
+    tdType.innerHTML = data["type"] + '.' + data["subtype"];
+    var payload = JSON.stringify(data["payload"]);
+    if (payload)  {
+      tdPayload.innerHTML = payload;
+    }
+    tdTimestamp.innerHTML = timeConverter(data["timestamp"]);
+    tdUuid.innerHTML = data["uuid"];
+    tdShow.innerHTML = '<a href="/events/' + data["id"] + '">Show</a>';
+  });
+
+  function timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var year = a.getFullYear();
+    var month = a.getMonth() + 1;
+    var day = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+  }
+</script>

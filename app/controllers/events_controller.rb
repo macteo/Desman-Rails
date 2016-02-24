@@ -1,11 +1,12 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token
+  before_action :authenticate, only: [:create]
 
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = Event.order('timestamp DESC').limit(100)
   end
 
   # GET /events/1
@@ -26,13 +27,12 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
-    if params["event"]["payload"]
+    if !params["event"]["payload"].is_a?(String)
       @event.payload = params["event"]["payload"].to_json
     end
 
     if params["event"]["timestamp"]
-      @event.timestamp = Time.at(params["event"]["timestamp"])
+      @event.timestamp = Time.at(params["event"]["timestamp"].to_f)
     end
 
     respond_to do |format|
@@ -49,12 +49,12 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    if event_params["payload"]
-      @event.payload = event_params["payload"].to_json
+    if !params["event"]["payload"].is_a?(String)
+      @event.payload = params["event"]["payload"].to_json
     end
 
-    if event_params["timestamp"]
-      @event.timestamp = Time.at(event_params["timestamp"])
+    if params["event"]["timestamp"]
+      @event.timestamp = Time.at(params["event"]["timestamp"].to_f)
     end
 
     respond_to do |format|
@@ -86,6 +86,27 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:type, :payload, :timestamp, :uuid, :user, :app)
+      params.require(:event).permit(:type, :subtype, :timestamp, :uuid, :user, :app, :payload, :attachment, :attachment_cache).tap do |whitelisted|
+        whitelisted[:payload] = params[:event][:payload]
+      end
     end
+
+    def authenticate
+    authenticate_or_request_with_http_token do  |token, options|
+      app = APPS_AUTH[params[:app]]
+      if app
+        logger.info "------- Token " #{token}
+        # logger.info "------- App #{app}"
+        if app["token"] && app["token"] == token
+          logger.info "Authenticated"
+        else
+          render :json => {:error => "Unauthorized"}.to_json, :status => 401
+          return
+        end
+      else
+        render :json => {:error => "app not found"}.to_json, :status => 404
+        return
+      end
+    end
+  end
 end
