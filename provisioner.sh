@@ -13,6 +13,8 @@ sudo apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libr
 
 sudo locale-gen UTF-8
 
+echo "oracle-java8-installer shared/accepted-oracle-license-v1-1 select true" | sudo debconf-set-selections
+
 sudo apt-get -y install oracle-java8-installer elasticsearch kibana nginx apache2-utils logstash
 
 sudo nano /etc/elasticsearch/elasticsearch.yml
@@ -47,3 +49,16 @@ rbenv rehash
 # cd /vagrant
 # bundle
 # rake db:migrate
+
+
+# TODO: Need to enable elasticsearch on localhost
+
+# sudo nano /etc/elasticsearch/elasticsearch.yml
+    # Decomment this line
+    # network.host: localhost
+
+# sudo service elasticsearch restart
+# sudo service kibana restart
+
+# Create Elasticsearch index
+# curl -XPUT 'http://localhost:9200/events/'
