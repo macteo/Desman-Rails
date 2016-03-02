@@ -34,7 +34,11 @@ class Event < ActiveRecord::Base
     filePath = "#{self.user}.log"
 
     File.open("#{dirPath}/#{filePath}", 'a+') { |file|
-      file.write("#{self.timestamp} - #{self.type}.#{self.subtype} - #{EVENTS_BASE_URL}#{event_path(self)}\n")
+      val = ""
+      if self.value != nil && !self.value.blank?
+        val = "#{self.value} "
+      end
+      file.write("#{self.timestamp} - #{self.type}.#{self.subtype} #{val}- #{EVENTS_BASE_URL}#{event_path(self)}\n") #
     }
   end
 
