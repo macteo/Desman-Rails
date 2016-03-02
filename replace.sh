@@ -23,7 +23,7 @@ bundle
 RAILS_ENV=production bundle exec rake db:migrate
 RAILS_ENV=production bundle exec rake assets:precompile
 
-sudo service puma-manager start
+sudo service puma-manager restart
 
 rm -rf ../desman-old
 rm -rf ../desman.zip

@@ -5,6 +5,7 @@ rm -rf desman
 cp -Rf Desman-Rails desman
 rm -rf desman/.git
 rm -rf desman/.vagrant
+rm -rf desman/input
 rm -rf desman/public/assets
 mkdir desman/public/assets
 rm -rf desman/public/uploads
