@@ -11,7 +11,7 @@ require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 set :domain, 'bryan.dimension.it'
 set :deploy_to, '/home/manager/web/desman'
 set :repository, 'https://github.com/macteo/Desman-Rails.git'
-set :branch, 'feature/mina'
+set :branch, 'develop'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
