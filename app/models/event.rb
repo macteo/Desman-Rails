@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   after_create :write_to_file
   after_create :broadcast_event
   after_create :save_on_elastic_search
+  after_create :slack_it
 
   # To be able to use type as parameter
   self.inheritance_column = :_type_disabled
@@ -85,6 +86,26 @@ class Event < ActiveRecord::Base
 
   def to_hash
     return socket_object(false)
+  end
+
+  def slack_it
+    if self.subtype == "GenericParseError" || self.subtype == "ResponseFormatError" || self.subtype == "MissingDataError"
+      for token in slack_tokens
+        notifier = Slack::Notifier.new "WEBHOOK_URL"
+        notifier.ping "#{self.to_hash}"
+      end
+    end
+  end
+
+  def app_config
+    return APPS_AUTH[self.app]
+  end
+
+  def slack_tokens
+    if app_config["slack"]
+      return app_config["slack"]
+    end
+    return nil
   end
 
 end
