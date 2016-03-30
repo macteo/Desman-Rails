@@ -90,8 +90,8 @@ class Event < ActiveRecord::Base
 
   def slack_it
     if self.subtype == "GenericParseError" || self.subtype == "ResponseFormatError" || self.subtype == "MissingDataError"
-      for token in slack_tokens
-        notifier = Slack::Notifier.new "WEBHOOK_URL"
+      for hook in slack_hooks
+        notifier = Slack::Notifier.new hook
         notifier.ping "#{self.to_hash}"
       end
     end
@@ -101,7 +101,7 @@ class Event < ActiveRecord::Base
     return APPS_AUTH[self.app]
   end
 
-  def slack_tokens
+  def slack_hooks
     if app_config["slack"]
       return app_config["slack"]
     end
