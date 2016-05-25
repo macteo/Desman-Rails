@@ -89,13 +89,33 @@ class Event < ActiveRecord::Base
   end
 
   def slack_it
-    if self.subtype == "GenericParseError" || self.subtype == "ResponseFormatError" || self.subtype == "MissingDataError"
-      for hook in slack_hooks
+    if subtype == 'GenericParseError' || subtype == 'ResponseFormatError' || subtype == 'MissingDataError'
+      slack_hooks.each do |hook|
         notifier = Slack::Notifier.new hook
-        notifier.username = self.app
+        unless username.nil?
+          notifier.username = "#{self.app} - #{username}"
+        else
+          notifier.username = self.app
+        end
         notifier.ping "#{self.subtype} - #{prettyPayload}"
       end
     end
+  end
+
+  def username
+    name_event = Event.where(user: user, type: 'Desman.Info').having('timestamp = MAX(timestamp)').pluck(:timestamp, :id, :payload).first
+
+    return nil if name_event.nil?
+
+    begin
+      pl = JSON.parse(name_event[2], :quirks_mode => true)
+      unless pl['username'].nil?
+        user = pl['username']
+        return user
+      end
+    rescue Exception => e
+    end
+    nil
   end
 
   def app_config
