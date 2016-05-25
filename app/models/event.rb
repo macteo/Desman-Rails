@@ -90,11 +90,14 @@ class Event < ActiveRecord::Base
 
   def slack_it
     if subtype == 'GenericParseError' || subtype == 'ResponseFormatError' || subtype == 'MissingDataError'
+      logger.info "Should send slack message"
       slack_hooks.each do |hook|
         notifier = Slack::Notifier.new hook
         unless username.nil?
-          notifier.username = "#{self.app} - #{username}"
+          logger.info "Username not nil"
+          notifier.username = "#{self.app}-#{username}"
         else
+          logger.info "Username nil"
           notifier.username = self.app
         end
         notifier.ping "#{self.subtype} - #{prettyPayload}"
