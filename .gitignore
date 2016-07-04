@@ -36,3 +36,5 @@ bower.json
 
 .vagrant/*
 public/uploads/*
+apps_auth.yml
+dump.rdb

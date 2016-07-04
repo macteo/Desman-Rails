@@ -1,6 +1,8 @@
 class AppsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  before_action :authenticate_user!
+  
   # GET /apps/:bundle/users
   # GET /apps/:bundle/users.json
   def index

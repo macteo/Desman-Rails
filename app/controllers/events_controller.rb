@@ -3,6 +3,8 @@ class EventsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :authenticate, only: [:create]
 
+  before_action :authenticate_user, except: [:create]
+
   # GET /events
   # GET /events.json
   def index
@@ -79,21 +81,23 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:event).permit(:type, :subtype, :timestamp, :uuid, :user, :app, :payload, :attachment, :attachment_cache, :value).tap do |whitelisted|
-        whitelisted[:payload] = params[:event][:payload]
-      end
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    def authenticate
-    authenticate_or_request_with_http_token do  |token, options|
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_params
+    params.require(:event).permit(:type, :subtype, :timestamp, :uuid, :user, :app, :payload, :attachment, :attachment_cache, :value).tap do |whitelisted|
+      whitelisted[:payload] = params[:event][:payload]
+    end
+  end
+
+  def authenticate
+    authenticate_or_request_with_http_token do |token, options|
       app = APPS_AUTH[params[:app]]
+      logger.info "------- App #{app}"
       if app
         logger.info "------- Token " #{token}
         # logger.info "------- App #{app}"
