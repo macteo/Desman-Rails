@@ -8,10 +8,11 @@ require 'mina/rbenv'  # for rbenv support. (http://rbenv.org)
 #   repository   - Git repo to clone from. (needed by mina/git)
 #   branch       - Branch name to deploy. (needed by mina/git)
 
-set :domain, 'bryan.dimension.it'
-set :deploy_to, '/home/manager/web/desman'
+# set :domain, 'bryan.dimension.it'
+set :domain, 'ovh.macteo.it'
+set :deploy_to, '/home/macteo/web/desman'
 set :repository, 'https://github.com/macteo/Desman-Rails.git'
-set :branch, 'develop'
+set :branch, 'macteo'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.

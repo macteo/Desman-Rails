@@ -79,9 +79,9 @@ Rails.application.configure do
 
   config.middleware.delete Rack::Lock
 
-  config.action_mailer.default_url_options = { host: 'desman.dimension.it' }
+  config.action_mailer.default_url_options = { host: 'd.macteo.it' }
 end
 
-EVENTS_DOMAIN = 'desman.dimension.it'
+EVENTS_DOMAIN = 'd.macteo.it'
 WEBSOCKET_URL = "#{EVENTS_DOMAIN}/websocket"
 EVENTS_BASE_URL = "https://#{EVENTS_DOMAIN}"
