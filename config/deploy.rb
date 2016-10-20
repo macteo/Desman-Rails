@@ -79,7 +79,7 @@ task :deploy => :environment do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/pids"
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/sockets"
-      queue 'sudo systemctl restart force'
+      queue 'sudo systemctl restart desman'
     end
   end
 end
