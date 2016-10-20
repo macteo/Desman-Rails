@@ -79,8 +79,7 @@ task :deploy => :environment do
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/"
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/pids"
       queue "mkdir -p #{deploy_to}/#{current_path}/tmp/sockets"
-      queue "sudo service desman restart"
-      queue "sudo service puma-manager restart"
+      queue 'sudo systemctl restart force'
     end
   end
 end
